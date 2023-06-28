@@ -1,0 +1,31 @@
+<h1>Cart</h1>
+
+<div class="empty-cart-message" *ngIf="cart.products.length === 0; else elseBlock">
+    no items in cart
+</div>
+
+<ng-template #elseBlock>
+    <div class="cart">
+        <div class="cart-items">
+            <div class="cart-item" *ngFor="let product of cart.products">
+                <img src="{{ product.url }}" alt="" />
+                <div class="cart-item-details">
+                    <h5>{{ product.name }}</h5>
+                    € {{ product.total.toFixed(2) }}
+
+                    <button class="btn btn-secondary" (click)="removeProduct(product.id)">
+            Remove
+          </button>
+
+                    <div class="form-group">
+                        <label for="cart-{{ product.name }}">Amount</label>
+                        <input type="number" class="form-control" min="1" id="cart-{{ product.name }}" [(ngModel)]="product.amount" ngModel (ngModelChange)="changeAmount(product.id, $event)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <app-payment-form (submitOrder)="createOrder($event)"></app-payment-form> -->
+    </div>
+    <h1 class="text-center">Total: € {{ cart.total.toFixed(2) }}</h1>
+</ng-template>
