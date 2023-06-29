@@ -1,4 +1,4 @@
-<h1>Cart</h1>
+<h1 class="mt-5">Cart</h1>
 
 <div class="empty-cart-message" *ngIf="cart.products.length === 0; else elseBlock">
     no items in cart
@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <!-- <app-payment-form (submitOrder)="createOrder($event)"></app-payment-form> -->
+        <app-payment (submitOrder)="createOrder($event)"></app-payment>
     </div>
     <h1 class="text-center">Total: € {{ cart.total.toFixed(2) }}</h1>
 </ng-template>

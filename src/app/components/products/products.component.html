@@ -1,4 +1,6 @@
-<h1>Products</h1>
+<h1 class="mt-5">Products</h1>
 <div class="product-index">
-    <app-product *ngFor="let product of productList" [product]="product"></app-product>
+    <div class="row">
+        <app-product class="col-sm-3" *ngFor="let product of productList" [product]="product"></app-product>
+    </div>
 </div>

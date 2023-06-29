@@ -11,9 +11,12 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
 import { HeaderComponent } from './layout/header/header.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, ProductsComponent, ProductComponent, CartComponent, ProductDetailComponent, AddToCartComponent, HeaderComponent],
+  declarations: [AppComponent, ProductsComponent, ProductComponent, CartComponent, ProductDetailComponent, AddToCartComponent, HeaderComponent, PaymentComponent, ConfirmationComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
