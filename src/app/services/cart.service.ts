@@ -23,7 +23,7 @@ export class CartService {
     return this.cart;
   }
 
-  addToCart(product: Product, amount: number) {
+  addToCart(product: Product, amount: number): void {
     const numberOfProducts: number = amount;
     const index: number = this.cart.products.findIndex(
       (prod) => prod.id === product.id
@@ -49,13 +49,18 @@ export class CartService {
     this.updateCartTotal();
   }
 
-  removeProduct(productId: number) {
-    const index: number = this.cart.products.findIndex(
-      (prod) => prod.id === productId
-    );
-    this.cart.products.splice(index, 1);
+  removeProduct(productId: number): boolean {
+    if (confirm('Are you sure you want to remove this product from cart?')) {
+      const index: number = this.cart.products.findIndex(
+        (prod) => prod.id === productId
+      );
+      this.cart.products.splice(index, 1);
 
-    this.updateCartTotal();
+      this.updateCartTotal();
+
+      return true;
+    }
+    return false;
   }
 
   updateCart(productId: number, amount: number): Cart {
@@ -79,7 +84,7 @@ export class CartService {
     this.cart.products.forEach((product) => (this.cart.total += product.total));
   }
 
-  createOrder(fullName: string) {
+  createOrder(fullName: string): void {
     this.order = {
       fullName,
       total: this.cart.total,
