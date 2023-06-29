@@ -1,0 +1,29 @@
+[{
+        "id": 1,
+        "name": "Woo Album",
+        "price": 9.99,
+        "url": "https://themes.woocommerce.com/storefront/wp-content/uploads/sites/78/2013/06/cd_5_angle.jpg",
+        "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo"
+    },
+    {
+        "id": 2,
+        "name": "Happy Ninja",
+        "price": 249.99,
+        "url": "https://themes.woocommerce.com/storefront/wp-content/uploads/sites/78/2013/06/T_7_front.jpg",
+        "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
+    },
+    {
+        "id": 3,
+        "name": "Ninja Silhouette",
+        "price": 79.99,
+        "url": "https://themes.woocommerce.com/storefront/wp-content/uploads/sites/78/2013/06/T_5_front.jpg",
+        "description": "Carry things around town!"
+    },
+    {
+        "id": 4,
+        "name": "Patient Ninja",
+        "price": 129.99,
+        "url": "https://themes.woocommerce.com/storefront/wp-content/uploads/sites/78/2013/06/hoodie_3_front.jpg",
+        "description": "Now you can see!"
+    }
+]

@@ -1,0 +1,16 @@
+<div class="detail-container" *ngIf="product">
+    <img src="{{ product.url }}" alt="" class="product-image" />
+    <div class="detail-item">
+        <div *ngIf="product.name">
+            <h1>{{ product.name }}</h1>
+            <p>{{ product.description }}</p>
+            <p>{{ product.price }}</p>
+
+            <app-add-to-cart [product]="product"></app-add-to-cart>
+
+            <div>
+                <a routerLink="/" routerLinkActive="active"> Back to product list </a>
+            </div>
+        </div>
+    </div>
+</div>

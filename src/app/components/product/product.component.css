@@ -1,0 +1,14 @@
+.product-image {
+    list-style-type: none;
+    padding: 20px;
+    max-width: 100%;
+}
+
+.product-container {
+    margin-top: 64px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}

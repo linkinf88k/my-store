@@ -1,0 +1,10 @@
+.product-index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+}
