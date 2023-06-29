@@ -1,9 +1,10 @@
 # MyStore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.2.
+Third project of udacity fullstack javascript developer Nanodegree. Build a storefront with Angular.
 
 ## Development server
 
+Run `npm install` to install all dependencies
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
