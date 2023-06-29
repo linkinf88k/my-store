@@ -1,60 +1,53 @@
-<form class="form form-margin" (ngSubmit)="submit(fullName, address, creditCard)">
+<form class="form form-margin row" (ngSubmit)="submit(fullName, address, creditCard)">
+    <div class="form-group col-md-12">
+        <label for="name" class="form-label">Full Name</label>
+        <input required type="text" [ngClass]="
+        fullName.touched && !fullName.valid
+          ? 'form-control is-invalid'
+          : 'form-control'
+      " id="name" aria-describedby="emailHelp" placeholder="Full Name" ngModel name="fullName" #fullName="ngModel" minlength="3" />
+
+        <div class="invalid-feedback">
+            <div *ngIf="fullName.errors?.['required']">Name is required.</div>
+            <div *ngIf="fullName.errors?.['minlength']">
+                Name must be at least 3 characters long.
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        <label for="address" class="form-label">Address</label>
+
+        <input required type="text" [ngClass]="
+        address.touched && !address.valid
+          ? 'form-control is-invalid'
+          : 'form-control'
+      " id="address" aria-describedby="addressHelp" placeholder="Address" ngModel name="address" #address="ngModel" minlength="6" />
+        <div class="invalid-feedback" *ngIf="address.touched && !address.valid">
+            <div *ngIf="address.errors?.['required']">Address is required.</div>
+            <div *ngIf="address.errors?.['minlength']">
+                Address must be at least 6 characters long.
+            </div>
+        </div>
+    </div>
+
     <div class="form-group">
-        <label for="name">Full Name</label>
-        <input required type="email" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Full Name" ngModel name="fullName" #fullName="ngModel" minlength="3" />
-        <small id="nameHelp" class="form-text text-muted">minimum 3-characters</small
-    >
-    <div class="alert alert-danger" *ngIf="fullName.touched && !fullName.valid">
-      Minimum 3 characters
+        <label for="credit-card" class="form-label">Credit Card</label>
+        <input required type="text" [ngClass]="
+        creditCard.touched && !creditCard.valid
+          ? 'form-control is-invalid'
+          : 'form-control'
+      " id="credit-card" aria-describedby="emailHelp" placeholder="Credit Card" ngModel name="creditCard" #creditCard="ngModel" minlength="18" pattern="^[0-9]*$" />
+        <div class="invalid-feedback">
+            <div *ngIf="creditCard.errors?.['minlength']">
+                Credit and number must be 18 characters long.
+            </div>
+            <div *ngIf="creditCard.errors?.['pattern']">
+                Credit and number must only be numbers.
+            </div>
+        </div>
     </div>
-  </div>
-
-  <div class="form-group">
-    <label for="address">Address</label>
-    <input
-      required
-      type="text"
-      class="form-control"
-      id="address"
-      aria-describedby="addressHelp"
-      placeholder="Address"
-      ngModel
-      name="address"
-      #address="ngModel"
-      minlength="6"
-    />
-    <small id="addressHelp" class="form-text text-muted"
-      >minimum 6-characters</small
-    >
-    <div class="alert alert-danger" *ngIf="address.touched && !address.valid">
-      Minimum 6 characters
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Place Order</button>
     </div>
-  </div>
-
-  <div class="form-group">
-    <label for="credit-card">Credit Card</label>
-    <input
-      required
-      type="text"
-      class="form-control"
-      id="credit-card"
-      aria-describedby="emailHelp"
-      placeholder="Credit Card"
-      ngModel
-      name="creditCard"
-      #creditCard="ngModel"
-      minlength="18"
-    />
-    <small id="creditCardHelp" class="form-text text-muted"
-      >18-digit-number</small
-    >
-    <div
-      class="alert alert-danger"
-      *ngIf="creditCard.touched && !creditCard.valid"
-    >
-      Minimum 18 digits
-    </div>
-  </div>
-
-  <button type="submit" class="btn btn-primary">Place Order</button>
 </form>
